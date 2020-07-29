@@ -41,7 +41,6 @@ export default class App extends React.Component {
       })
       .then(res=>{
         if(res!=null){
-          console.log('entered in')
           this.setState({
             showMessage:true,
             name:this.proref.current.value,
@@ -49,19 +48,14 @@ export default class App extends React.Component {
             price:this.priref.current.value
           })
         }
-        console.log(res);
       }).catch(err=>console.log('error is',err))
- 
-     
      }
-   
   }
 
 render(){
   return (
     <div className="App">
         {
-        
         (this.state.showMessage===true)?<div><h1>Product Registered</h1></div>:
        <div>
    <h1>Admin Panel</h1>
@@ -69,15 +63,9 @@ render(){
       <input type='text' placeholder="description" ref={this.desref}></input><br></br>
       <input type='text' placeholder="price" ref={this.priref}></input><br></br>
         <button onClick = {this.sendData}>Send Data</button>
-
        </div>
-        
         }
-
         </div>
-        
-
-  );
-  }
-  
+      );
+    }
   }
